@@ -1,0 +1,94 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API de Previsão do Tempo",
+    "description": "Uma API para obter previsões do tempo.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Página Inicial",
+        "description": "Renderiza a página inicial com um formulário de registro.",
+        "responses": {
+          "200": {
+            "description": "Página inicial carregada com sucesso."
+          }
+        }
+      }
+    },
+    "/documentacao": {
+      "post": {
+        "summary": "Página de Documentação",
+        "description": "Renderiza a página de documentação para os usuários obterem informações sobre como usar a API.",
+        "responses": {
+          "200": {
+            "description": "Página de documentação carregada com sucesso."
+          }
+        }
+      }
+    },
+    "/resultado": {
+      "get": {
+        "summary": "Página de Resultado da Previsão do Tempo",
+        "description": "Renderiza a página de resultado da previsão do tempo após o registro do usuário.",
+        "responses": {
+          "200": {
+            "description": "Página de resultado carregada com sucesso."
+          }
+        }
+      }
+    },
+    "/cidade": {
+      "get": {
+        "summary": "Página de Previsão do Tempo para uma Cidade Específica",
+        "description": "Renderiza a página para selecionar o estado e a cidade para verificar a previsão do tempo.",
+        "responses": {
+          "200": {
+            "description": "Página de seleção de cidade carregada com sucesso."
+          }
+        },
+        "parameters": [
+          {
+            "name": "estado",
+            "in": "query",
+            "description": "Estado selecionado.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cidade",
+            "in": "query",
+            "description": "Cidade selecionada.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "name": "estado",
+          "in": "query",
+          "description": "Estado selecionado.",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "cidade",
+          "in": "query",
+          "description": "Cidade selecionada.",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  }
+}
